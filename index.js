@@ -2,13 +2,13 @@
 const path = require('path');
 const copy = require('copy-template-dir');
 const { Input } = require('enquirer');
-const init = require('./utiils/init');
 const to = require('await-to-js').default;
 const handleError = require('cli-handle-error');
 
-async () => {
-  init();
+const init = require('./utils/init');
 
+(async () => {
+  init();
   const [err, name] = await to(new Input({ message: `CLI nanme>`, hint: `(use kebab-case only)` }).run());
 
   handleError('INPUT', err);
@@ -28,4 +28,4 @@ async () => {
     console.log('Done');
     console.log();
   });
-};
+})();
