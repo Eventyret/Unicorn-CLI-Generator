@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "description": "A CLI to geenerate other CLI's",
   "bin": {
-    "create-unicorn-cli": "./bin/create-unicorn-cli.js",
-    "unicorn-cli": "./bin/unicorn-cli.js",
-    "ucli": "./bin/unicorn-cli.js"
+    "create-unicorn-cli": "index.js",
+    "unicorn-cli": "index.js",
+    "ucli": "index.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
