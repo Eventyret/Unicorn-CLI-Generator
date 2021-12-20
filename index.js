@@ -10,7 +10,7 @@ const ask = require('./utils/ask');
 
   const name = await ask({ message: `CLI name?`, hint: `e.g. unicorn-cli )(kebab-case only)` });
   const description = await ask({ message: `CLI description?` });
-  const version = await ask({ message: `CLI version?` });
+  const version = await ask({ message: `CLI version?`, initial: `1.0.0` });
   const vars = { name, description, version };
 
   const inDir = path.join(__dirname, `template`);
