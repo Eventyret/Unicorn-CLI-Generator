@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 const path = require('path');
 const copy = require('copy-template-dir');
-
+const { green: g, dim: d } = require('chalk');
 const init = require('./utils/init');
 const ask = require('./utils/ask');
 
@@ -25,7 +25,7 @@ const ask = require('./utils/ask');
   copy(inDir, outDir, vars, (err, createdFiles) => {
     if (err) throw err;
     console.log();
-    console.log(`Creating files in : ./${vars.name}`);
+    console.log(d(`Creating files in : ${g(`./${vars.name}`)}`));
     createdFiles.forEach((filePath) => {
       const fileName = path.basename(filePath);
       console.log(`Created ${fileName}`);
