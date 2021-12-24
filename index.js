@@ -25,10 +25,10 @@ const ask = require('./utils/ask');
 
   copy(inDirPath, outDirPath, vars, (err, createdFiles) => {
     if (err) throw err;
-    console.log(d(`\nCreating files in : ${g(`./${outDir}`)}`));
+    console.log(d(`\nCreating files in : ${g(`./${outDir} directory:\n`)}`));
     createdFiles.forEach((filePath) => {
       const fileName = path.basename(filePath);
-      console.log(`Created ${fileName}`);
+      console.log(`${g(`CREATED`)} Created ${fileName}`);
     });
     alert({
       type: 'success',
