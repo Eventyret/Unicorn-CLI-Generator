@@ -15,7 +15,7 @@ module.exports = async ({ name, message, hint, initial }) => {
         if (state && state.name === 'command') return true;
         if (state && state.name === `name`) {
           if (fs.existsSync(value)) {
-            return `Directory already exists: ./ ${value} `;
+            return `Directory already exists: ./${value} `;
           } else {
             return true;
           }
