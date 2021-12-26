@@ -1,4 +1,5 @@
 const { Input } = require('enquirer');
+const fs = require('fs');
 const to = require('await-to-js').default;
 const handleError = require('cli-handle-error');
 const shouldCancel = require('cli-should-cancel');
@@ -12,9 +13,15 @@ module.exports = async ({ name, message, hint, initial }) => {
       initial,
       validate(value, state) {
         if (state && state.name === 'command') return true;
-
+        if (state && state.name === `name`) {
+          if (fs.existsSync(value)) {
+            return `Directory already exists: ./ ${value} `;
+          } else {
+            return true;
+          }
+        }
         return !value ? `Please add value.` : true;
-      },
+      }
     })
       .on(`cancel`, () => shouldCancel())
       .run()
