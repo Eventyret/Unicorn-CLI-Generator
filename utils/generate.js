@@ -38,7 +38,7 @@ module.exports = async () => {
     ];
     await execa(`npm`, [`install`, ...pkgs]);
     await execa(`npm`, [`dedupe`]);
-    spinner.succeed(`${g(`DE{ENDENCIES}`)} installed!`);
+    spinner.succeed(`${g(`DEPENDENCIES`)} installed!`);
 
     alert({
       type: 'success',
