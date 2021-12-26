@@ -1,5 +1,13 @@
 #!/usr/bin/env node
-/**
- * {{name}}
- * {{description}}
- */
+
+const init = require('./utils/initcli');
+const init = require('../utils/init')(
+  /**
+   * {{name}}
+   * {{description}}
+   */
+
+  async () => {
+    init();
+  }
+)();
