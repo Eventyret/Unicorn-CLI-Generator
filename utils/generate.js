@@ -37,6 +37,7 @@ module.exports = async () => {
       `cli-handle-unhandled`
     ];
     await execa(`npm`, [`install`, ...pkgs]);
+    await execa(`npm`, [`install`, `prettier`, `-D`]);
     await execa(`npm`, [`dedupe`]);
     spinner.succeed(`${g(`DEPENDENCIES`)} installed!`);
 
