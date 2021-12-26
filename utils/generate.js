@@ -1,7 +1,7 @@
 const path = require('path');
 const copy = require('copy-template-dir');
 const { green: g, dim: d } = require('chalk');
-const alert = require('cli-alert');
+const alert = require('cli-alerts');
 const questions = require('./questions');
 
 module.exports = async () => {
