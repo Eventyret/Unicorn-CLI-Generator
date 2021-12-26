@@ -5,9 +5,12 @@ const { green: g, dim: d } = require('chalk');
 const alert = require('cli-alert');
 const init = require('./utils/init');
 const ask = require('./utils/ask');
+const cli = require('./template/utils/cli');
 
-(async () => {
-  init();
+const input = cli.input;
+const flags = cli.flags;
+const { clear } = flags(async () => {
+  init({ clear });
 
   const name = await ask({ message: `CLI name?`, hint: `e.g. unicorn-cli )(kebab-case only)` });
   const command = await ask({ message: `CLI command?`, hint: `(optional: if different from CLI name)` });

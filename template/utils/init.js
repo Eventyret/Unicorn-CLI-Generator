@@ -5,7 +5,7 @@ const unhandled = require('cli-handle-unhandled');
 module.exports = ({ clear = true }) => {
   unhandled();
   welcome({
-    title: {{name}},
+    title: `{{name}}`,
     tagLine: `by {{authorName}}`,
     version: pkg.version,
     description: pkg.description,
