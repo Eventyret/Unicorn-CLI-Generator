@@ -10,6 +10,7 @@ const ask = require('./utils/ask');
   init();
 
   const name = await ask({ message: `CLI name?`, hint: `e.g. unicorn-cli )(kebab-case only)` });
+  const command = await ask({ message: `CLI command?`, hint: `(optional: if different from CLI name)` });
   const description = await ask({ message: `CLI description?` });
   const version = await ask({ message: `CLI version?`, initial: `1.0.0` });
 
@@ -18,7 +19,7 @@ const ask = require('./utils/ask');
   const authorURL = await ask({ message: `CLI author URL?` });
   const license = await ask({ message: `License` });
 
-  const vars = { name, description, version, authorName, authorEmail, authorURL };
+  const vars = { name, license: license ? license : 'UNLICENSED', description, version, authorName, authorEmail, authorURL, command: command ? command : name };
   const outDir = vars.name;
   const inDirPath = path.join(__dirname, `template`);
   const outDirPath = path.join(process.cwd(), outDir);

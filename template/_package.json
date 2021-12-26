@@ -4,7 +4,8 @@
   "version": "{{version}}",
   "license": "{{license}}",
   "bin": {
-    "{{name}}": "index.js"
+    "{{name}}": "index.js",
+    "{{command}}": "index.js"
   },
   "author": {
     "name": "{{authorName}}",

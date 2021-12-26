@@ -28,7 +28,7 @@ const commands = {
 };
 
 const helpText = meowHelp({
-  name: `{{name}}`,
+  name: `{{command}}`,
   flags,
   commands,
 });
@@ -40,4 +40,4 @@ const options = {
   flags,
 };
 
-exports.module = meow(helpText, options);
+module.exports = meow(helpText, options);

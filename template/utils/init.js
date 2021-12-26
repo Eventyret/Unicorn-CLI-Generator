@@ -5,8 +5,8 @@ const unhandled = require('cli-handle-unhandled');
 module.exports = ({ clear = true }) => {
   unhandled();
   welcome({
-    title: 'create-unicorn-cli',
-    tagLine: 'by eventyret (dehlin.dev)',
+    title: {{name}},
+    tagLine: `by {{authorName}}`,
     version: pkg.version,
     description: pkg.description,
     bgColor: '#6cc24a',
