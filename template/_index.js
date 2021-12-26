@@ -1,13 +1,16 @@
 #!/usr/bin/env node
 
-const init = require('./utils/initcli');
-const init = require('../utils/init')(
-  /**
-   * {{name}}
-   * {{description}}
-   */
+/**
+ * {{name}}
+ * {{description}}
+ */
 
-  async () => {
-    init();
-  }
-)();
+const init = require('./utils/init');
+const cli = require('../utils/cli');
+const input = cli.input;
+const flags = cli.flags;
+const { clear } = flags;
+
+(async () => {
+  init({ clear });
+})();
